@@ -16,8 +16,6 @@ def forward_step(input_t, model, prev_state_prob = None):
     X = convolve( model.W_x, input_t ) + model.b_x
 
     output_t = X @ current_state_prob
-    # if( model.only_diff ):
-    #     output_t = output_t + input_t[-len(output_t):]
     
     return output_t, current_state_prob
 
